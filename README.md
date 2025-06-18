@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Yello.zib의 공식 웹사이트입니다.
+
+## About
+수공예 다이어리와 키링을 중심으로, 따뜻한 디자인과 이야기를 담은 브랜드 Yello.zib의 온라인 공간입니다.
+
+---
+
+아직 메인화면 디자인 구성중이예요!
+👉 향후 기능 추가와 디자인 개선이 예정되어 있습니다.
 
 ## Getting Started
 
