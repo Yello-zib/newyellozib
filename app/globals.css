@@ -1,26 +1,97 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Futura PT 폰트 패밀리 적용
+   - 시스템에 Futura PT가 있으면 우선 사용
+   - 없으면 Helvetica, Arial, sans-serif 순
+   - 웹폰트 미제공 시 대체: Montserrat (비슷한 느낌, 주석)
+========================= */
+
+html, body {
+  font-family: 'Futura PT', Futura, 'Montserrat', Helvetica, Arial, sans-serif;
+  /* Montserrat: Futura PT 미제공 시 대체, Google Fonts에서 사용 가능 */
+}
+
+/* 타이틀(예: h1, h2, 페이지 제목 등) - Futura PT Bold/Heavy 느낌 */
+h1, h2, .title, .page-title {
+  font-family: 'Futura PT', Futura, 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* 본문 텍스트(p 등) - Futura PT Regular 느낌 */
+p, .body-text {
+  font-family: 'Futura PT', Futura, 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Ownglyph_ParkDaHyun 웹폰트 등록 */
+@font-face {
+    font-family: 'Ownglyph_ParkDaHyun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GmarketSansMedium 웹폰트 등록 */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-gmarket {
+  font-family: 'GmarketSansMedium', 'Gmarket Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-weight: 700;
+}
+
+.font-futura {
+  font-family: 'Futura PT', Futura, 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
